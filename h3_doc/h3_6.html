@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>h1</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+    <nav class="sidebar" id="sidebar-placeholder"></nav>
+
+    <main class="content">
+        
+       <h1>2.5 Nem funkcionális követelmények</h1>
+        <p><strong>Válaszidő:</strong> A rendszer átlagos válaszideje bármely felhasználói műveletre (pl. oldalbetöltés, keresés, receptfeltöltés) legfeljebb 2 másodperc legyen normál terhelés mellett.</p>
+        <p><strong>Keresési teljesítmény:</strong> A receptek közötti keresés eredményeinek megjelenítése legfeljebb 1 másodpercet vegyen igénybe, akár 10 000 recept adatbázis esetén is.</p>
+        <p><strong>Üzemidő:</strong> A rendszer 99%-os rendelkezésre állást biztosít egy naptári hónap során. Ez legfeljebb ~7,3 óra kiesést jelent havonta, amely karbantartási ablakokra korlátozódik (éjszaka, hétvégén).</p>
+        <p><strong>Hibakezelés:</strong> Az alkalmazásban előforduló váratlan hibák soha ne eredményezzék a teljes alkalmazás leállását. A felhasználó számára értelmezhető hibaüzenetek jelenjenek meg, és a rendszer naplózza a hibákat a későbbi javítás érdekében.</p>
+        <p><strong>Reszponzív Design:</strong> A felhasználói felületnek teljes mértékben reszponzívnak kell lennie, és optimális felhasználói élményt kell nyújtania minden olyan eszközön, amely képes webtartalom megjelenítésére (okostelefon, tablet, laptop, asztali számítógép).</p>
+        <p><strong>Jelszavak:</strong> Minden jelszó bcrypt vagy egy hasonló erős, egyirányú titkosítási algoritmus segítségével legyen titkosítva az adatbázisban.</p>
+        <p><strong>Hitelesítés:</strong> A felhasználói munkamenetek JWT (JSON Web Token) vagy hasonló, iparági szabványnak megfelelő módszerrel legyenek kezelve, amelyek rövid lejárati idővel rendelkeznek.</p>
+        <p><strong>Karbantarthatóság:</strong> A kódnak modulárisan, tisztán és dokumentálva kell lennie, hogy egy új fejlesztő a csapatban 1 hét alatt képes legyen jelentős módosításokat végezni anélkül, hogy kritikus hibákat vezetne be.</p>
+        <p><strong>Skálázhatóság:</strong> A rendszer architektúráját úgy kell megtervezni, hogy az vízszintesen skálázható legyen (pl. terheléselosztók és több alkalmazásszerver bevezetésével) a felhasználói szám növekedésének kielégítése érdekében.</p>
+    
+    </main>
+
+      <script src="/scripts/script.js"></script>
+</body>
+</html>
