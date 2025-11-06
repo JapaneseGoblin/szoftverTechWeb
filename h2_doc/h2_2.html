@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>h2</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+
+    <nav class="sidebar" id="sidebar-placeholder"></nav>
+
+    <main class="content">
+
+        <h1>2. Vízió dokumentum</h1>
+        <h2>2.1 Címlap</h2>
+        <p>Projekt címe: EvoSaft, Szotvertechnológia, Uwu Destroyers
+            <br>
+            Verzió: 1.0
+            <br>
+            Dátum: 2025.10.06
+        </p>
+
+        <h2>2.2 Bevezetés</h2>
+        <p>Ez a projekt egy receptmegosztó oldal, minden felhasználó számára. Célja, hogy a felhasználók megtudják
+            osztani másokkal saját receptjeiket, a felhasználónak van egy saját digitális hűtője, amiben különböző
+            alapanyagokat tud tárolni és azok alapján megtudja nézni, hogy melyik recepteket tudja elkészíteni, képes
+            receptek lementésére. </p>
+
+        <h2>2.3 Probléma megfogalmazása</h2>
+        <p>Az emberek külön-külön szokták keresni a recepteket, ez az oldal meg egy megoldás arra, hogy a receptek
+            összelegyenek sűrítve. Az oldalon van egy beállítási lehetőség, ami a kontrasztos mód. Akiknek baj van a
+            látásukkal és csak így tudják látni, ez egy hatalmas probléma tud lenni. </p>
+
+        <h2>2.4 A termék helye a piacon</h2>
+        <p>A célközönség átlagos, főzésben kevésbé jártas emberekből áll, akik gyorsan szeretnének főzni a meglévő
+            alapanyagokból. A rendszer a Nosaltyhoz és Mindmegettéhez képest saját hűtőszekrény funkcióval rendelkezik
+            és ebből adódóan személyre szabott receptjavaslatokat kínál, így időt, pénzt és élelmiszert spórol,
+            lehetőséget ad saját receptek megosztására is.</p>
+
+        <h2>2.5 Felhasználói környezet</h2>
+        <p>A super admin az adminokat kezeli, az admin a felhasználókat és recepteket menedzseli, míg a regisztrált
+            felhasználók saját receptjeiket és „hűtőszekrényüket” kezelhetik. A vendégek regisztráció nélkül
+            böngészhetik a nyilvános tartalmakat. A webes, reszponzív felület számítógépen és mobilon is elérhető,
+            felhasználóbarát és többnyelvű használatra készül.</p>
+
+        <h2>2.6 A termék előnyei</h2>
+        <p>A platform segíti a felhasználókat abban, hogy meglévő alapanyagaikból könnyen találjanak elkészíthető
+            ételeket és megoszthassák receptjeiket. Az adminok egyszerűen kezelhetik a tartalmakat és a felhasználókat,
+            a super admin pedig felügyelheti a rendszert. A vendégek regisztráció nélkül is böngészhetnek, így a
+            rendszer időt spórol, csökkenti a pazarlást és közösségi élményt nyújt. </p>
+
+        <h2>2.7 Feltételezések és függőségek</h2>
+        <p>Feltételezések: Stabil internetkapcsolat, vagy egy eszköz, amire az offline mód letölthető</p>
+        <p>Függőségek: A backend szerver stabil futása. </p>
+
+        <h2>2.8 A termék funkciói</h2>
+        <p>Kötelező:</p>
+        <ul>
+            <li>Profil: A felhasználó profilt hoz létre, majd ebbe jelentkezik be.</li>
+            <li>Alapanyagok: A rendszer nyilvántartja az otthon lévő alapanyagokat</li>
+            <li>Receptek: Az alapanyagok alapján megmutatja milyen receptek készíthetők el</li>
+        </ul>
+        <p>Ajánlott:</p>
+        <ul>
+            <li>Profil: A profil szerkesztehtő, emailes megerősítés van regisztrációkor </li>
+            <li>Receptek: A receptek megoszthatók más felhasználókkal, kedvencek jelölhetőek ki</li>
+        </ul>
+        <p>Jó, ha van:</p>
+        <ul>
+            <li>Alapanyagok: Bevásárló lista létrehozása a hiányzó alapanyagok szerint</li>
+        </ul>
+
+        <h2>2.9 Minőségi elvárások:</h2>
+        <p>Teljesítmény: A rendszer 50-100 felhasználót legyen képes egyidejűleg elbírni </p>
+        <p>Biztonság: A felhasználói adatok titkosított tárolása </p>
+        <p>Használhatóság: Letisztult, reszponzív felület </p>
+
+        <h2>2.10 Kockázati lista</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Kockázat</th>
+                    <th>Valószínűsége</th>
+                    <th>Hatás</th>
+                    <th>Megoldás</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Instabil internetkapcsolat</td>
+                    <td>Magas</td>
+                    <td>Közepes</td>
+                    <td>Offline mód (letölthető receptek)</td>
+                </tr>
+                <tr>
+                    <td>Explicit tartalom</td>
+                    <td>Magas</td>
+                    <td>Közepes</td>
+                    <td>Jogosultságok, Adminisztrátorok alkalmazása, blokkolási funkciók</td>
+                </tr>
+                <tr>
+                    <td>Adatvédelmi, Biztonsági problémák</td>
+                    <td>Közepes</td>
+                    <td>Magas</td>
+                    <td>Titkosítás, átlátható adatkezelés, biztonsági auditok</td>
+                </tr>
+                <tr>
+                    <td>Gazdaságikockázatok</td>
+                    <td>Közepes</td>
+                    <td>Nagyon magas</td>
+                    <td>Prémium tagságok, hirdetések bevezetése</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>2.11 Szótár</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fogalom</th>
+                    <th>Definíció</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Virtuális hűtő</td>
+                    <td>Hozzávalók digitális nyomon követése</td>
+                </tr>
+                <tr>
+                    <td>Virtuális bevásárló lista</td>
+                    <td>Szükséges hozzávalók nyomon követése</td>
+                </tr>
+                <tr>
+                    <td>Admin</td>
+                    <td>Az oldal moderálásáért felelős személy</td>
+                </tr>
+                <tr>
+                    <td>Vendég</td>
+                    <td>Be nem jelentkezett felhasználó, csak a recepteket tudja böngészni</td>
+                </tr>
+                <tr>
+                    <td>Kategória</td>
+                    <td>Receptek csoportosítása típus szerint (Pl.: főétel)</td>
+                </tr>
+                <tr>
+                    <td>Címke</td>
+                    <td>Jelölő kulcsszó (Pl.: gluténmentes)</td>
+                </tr>
+                <tr>
+                    <td>Jelentés</td>
+                    <td>Egy funkció, amellyel a felhasználó a közösségi irányelveknek ellentmondó tartalmat jelezhet a
+                        moderátoroknak.</td>
+                </tr>
+                <tr>
+                    <td>Közösségi irányelvek</td>
+                    <td>A platformon elfogadható viselkedés és tartalom feltételeit meghatározó szabályok.</td>
+                </tr>
+                <tr>
+                    <td>Profil</td>
+                    <td>Egy felhasználó személyes oldala, ahol receptjei, kedvenc receptjei és adatai láthatók.</td>
+                </tr>
+                <tr>
+                    <td>Könyvjelző</td>
+                    <td>Egy funkció, amellyel a felhasználó későbbre elmenthet egy receptet.</td>
+                </tr>
+                <tr>
+                    <td>Szuper Admin</td>
+                    <td>
+                        A legmagasabb jogosultsági szinttel rendelkező felhasználó. Teljes hozzáféréssel rendelkezik a
+                        rendszer minden részéhez,
+                        beleértve más adminisztrátorok és moderátorok kezelését, rendszerszintű beállítások módosítását,
+                        valamint az összes adat és
+                        funkció feletti irányítási jogot.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script src="/scripts/script.js"></script>
+</body>
+
+</html>
