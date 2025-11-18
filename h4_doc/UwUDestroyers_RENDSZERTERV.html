@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>h4</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+
+    <nav class="sidebar" id="sidebar-placeholder"></nav>
+
+    <main class="content">
+        <h1>2. Rendszertervezés (System Design Document)</h1>
+        <img src="/images/module_com.PNG" alt="Module">
+        <h2>Architektúra áttekintés</h2>
+        <p>A rendszer <strong>háromrétegű architektúrát</strong> követ, amely elkülöníti a megjelenítési, üzleti logikai
+            és adatkezelési feladatokat.</p>
+
+        <p><strong>Réteges felépítés:</strong></p>
+        <p>• <strong>Megjelenítési réteg (Presentation Layer)</strong> - React frontend alkalmazás</p>
+        <p>• <strong>Alkalmazási réteg (Application Layer)</strong> - ASP.NET Core API kontrollerek és szolgáltatások
+        </p>
+        <p>• <strong>Adatkezelési réteg (Data Access Layer)</strong> - Entity Framework és MySQL adatbázis</p>
+
+        <h2>Komponens-terv</h2>
+
+        <h3>Fő modulok és csomagok</h3>
+
+        <p><strong>Frontend modulok (React):</strong></p>
+        <p>• components/ - Újrahasználható UI komponensek</p>
+        <p>• pages/ - Oldal komponensek (Főoldal, Receptek, Hűtő, Bevásárlólisták)</p>
+        <p>• services/ - API hívások kezelése</p>
+        <p>• context/ - Globális állapot kezelés</p>
+        <p>• utils/ - Segédfüggvények és kontrasztos mód implementáció</p>
+
+        <p><strong>Backend modulok (ASP.NET Core):</strong></p>
+        <p>• Controllers/ - REST API végpontok</p>
+        <p>• Services/ - Üzleti logika implementáció</p>
+        <p>• Models/ - Domain entitások és DTO-k</p>
+        <p>• Data/ - Adatbázis kontextus és migrációk</p>
+        <p>• Repositories/ - Adatbázis műveletek</p>
+        <p>• Helpers/ - Segédosztályok (pl. JWT kezelés)</p>
+
+        <h3>Fő osztályok és felelősségeik</h3>
+
+        <table>
+            <tr>
+                <th>Osztály neve</th>
+                <th>Felelősségek</th>
+            </tr>
+            <tr>
+                <td><strong>User</strong></td>
+                <td>Felhasználói adatok tárolása, autentikáció és autorizáció, kapcsolatok kezelése</td>
+            </tr>
+            <tr>
+                <td><strong>Recipe</strong></td>
+                <td>Recept adatok tárolása, hozzávalók és elkészítési lépések kezelése, kategóriák és címkék kezelése
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Ingredient</strong></td>
+                <td>Hozzávaló alapadatok tárolása, kategorizálás és mértékegységek kezelése</td>
+            </tr>
+            <tr>
+                <td><strong>Refrigerator</strong></td>
+                <td>Felhasználói hűtő tartalmának nyilvántartása, lejárati dátumok követése</td>
+            </tr>
+            <tr>
+                <td><strong>ShoppingList</strong></td>
+                <td>Bevásárlólisták kezelése, tételek státuszának nyomon követése</td>
+            </tr>
+        </table>
+
+        <h2>Interakciós terv</h2>
+
+        <h3>Adatáramlás - Recept létrehozása</h3>
+        <p>1. Frontend → RecipeController.CreateRecipe()</p>
+        <p>2. RecipeController → RecipeService.ValidateAndSave()</p>
+        <p>3. RecipeService → IngredientService.ValidateIngredients()</p>
+        <p>4. RecipeService → RecipeRepository.Save()</p>
+        <p>5. RecipeRepository → MySQL adatbázis</p>
+
+        <h3>Adatáramlás - Hűtő tartalom ellenőrzése</h3>
+        <p>1. Frontend → RefrigeratorController.GetAvailableIngredients()</p>
+        <p>2. RefrigeratorController → RecipeService.FindMatchingRecipes()</p>
+        <p>3. RecipeService → RefrigeratorService.GetCurrentItems()</p>
+        <p>4. RefrigeratorService → RefrigeratorRepository.FindByUser()</p>
+
+        <h3>Adatáramlás - Bevásárlólista generálása</h3>
+        <p>1. Frontend → ShoppingListController.GenerateFromRecipe()</p>
+        <p>2. ShoppingListController → RecipeService.GetMissingIngredients()</p>
+        <p>3. RecipeService → RefrigeratorService.CheckInventory()</p>
+        <p>4. ShoppingListService → ShoppingListRepository.Save()</p>
+
+        <h2>Használt tervezési minták</h2>
+
+        <p><strong>MVC (Model-View-Controller):</strong></p>
+        <p>• Frontend és backend elkülönítése</p>
+        <p>• Egységes architektúra a teljes alkalmazásban</p>
+
+        <p><strong>Repository minta:</strong></p>
+        <p>• Adatbázis műveletek egységes kezelése</p>
+        <p>• Üzleti logika és adatréteg elkülönítése</p>
+
+        <p><strong>Service Layer minta:</strong></p>
+        <p>• Üzleti logika centralizálása</p>
+        <p>• Kontrollerek vékonyan tartása</p>
+
+        <p><strong>DTO (Data Transfer Object):</strong></p>
+        <p>• Adatok biztonságos átvitele rétegek között</p>
+        <p>• Entity és prezentációs modell elkülönítése</p>
+
+        <h2>Technológiai környezet</h2>
+
+        <p><strong>Frontend technológiák:</strong></p>
+        <p>• React 18+ - Komponens alapú UI fejlesztés</p>
+        <p>• TypeScript - Típusbiztos JavaScript</p>
+        <p>• Axios - HTTP kliens</p>
+        <p>• React Router - Oldal navigáció</p>
+        <p>• Material-UI - Design rendszer</p>
+
+        <p><strong>Backend technológiák:</strong></p>
+        <p>• C# - Programozási nyelv</p>
+        <p>• ASP.NET Core - Alkalmazás keretrendszer</p>
+        <p>• Entity Framework Core - ORM megoldás</p>
+        <p>• JWT Bearer - Autentikáció</p>
+        <p>• Swashbuckle - API dokumentáció</p>
+
+        <p><strong>Adatbázis:</strong></p>
+        <p>• MySQL 8.0 - Relációs adatbázis</p>
+        <p>• Pomelo Entity Framework - MySQL provider</p>
+
+        <p><strong>Egyéb technológiák:</strong></p>
+        <p>• Docker - Konténerizáció</p>
+        <p>• xUnit - Unit tesztek</p>
+        <p>• Selenium - Integrációs tesztek</p>
+
+        <h2>Külső interfészek, API-k</h2>
+
+        <p><strong>Belső REST API végpontok:</strong></p>
+        <p>• /api/users - Felhasználói műveletek</p>
+        <p>• /api/recipes - Recept műveletek</p>
+        <p>• /api/ingredients - Hozzávaló műveletek</p>
+        <p>• /api/refrigerator - Hűtő műveletek</p>
+        <p>• /api/shopping-lists - Bevásárlólista műveletek</p>
+
+        <p><strong>Külső API integrációk:</strong></p>
+        <p>• Email service - Regisztráció megerősítéséhez</p>
+        <p>• Képfeltöltés service - Profilkép és recept képek tárolásához</p>
+
+        <h2>Korlátozások, feltételezések</h2>
+
+        <p><strong>Technikai korlátozások:</strong></p>
+        <p>• MySQL adatbázis használata kötelező</p>
+        <p>• Modern böngésző támogatás (Chrome, Firefox, Safari legújabb verziói)</p>
+        <p>• Internet kapcsolat szükséges (kivéve offline mód)</p>
+
+        <p><strong>Teljesítmény feltételezések:</strong></p>
+        <p>• Maximum 50-100 egyidejű felhasználó</p>
+        <p>• 10 000 recept tárolási kapacitás</p>
+        <p>• 2 másodperc alatti válaszidő</p>
+
+        <p><strong>Biztonsági feltételezések:</strong></p>
+        <p>• Jelszavak bcrypt titkosítással</p>
+        <p>• JWT token alapú autentikáció</p>
+        <p>• HTTPS kommunikáció</p>
+
+        <p><strong>Fejlesztési korlátozások:</strong></p>
+        <p>• Agile Scrum módszertan</p>
+        <p>• Heti sprint review-k</p>
+        <p>• GitHub verziókezelés</p>
+
+    </main>
+
+    <script src="/scripts/script.js"></script>
+</body>
+
+</html>

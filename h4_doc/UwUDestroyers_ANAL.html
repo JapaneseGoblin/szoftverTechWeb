@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>h4</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+
+    <nav class="sidebar" id="sidebar-placeholder"></nav>
+
+    <main class="content">
+        <h1>1. Analízis Modell (OO Analízis)</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Osztály neve</th>
+                    <th>Leírás</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>User</strong></td>
+                    <td>Felhasználói entitás, ahol a felhasználó személyes adatait tároljuk el</td>
+                </tr>
+                <tr>
+                    <td><strong>Recipe</strong></td>
+                    <td>Recept entitás, amit a felhasználó tud létrehozni, képet, szöveget illetve "ingredienteket"
+                        tartalmaz</td>
+                </tr>
+                <tr>
+                    <td><strong>Ingredient</strong></td>
+                    <td>Hozzávaló entitás, az receptekhez szükséges hozzávalókat tároljuk ebben az osztályban, név,
+                        kategória (pl.: dióféle), egység (g, ml, l)</td>
+                </tr>
+                <tr>
+                    <td><strong>Refrigerator</strong></td>
+                    <td>Hűtő entitás, minden felhasználóhoz tartozik egy hűtő, amelyekben letudja tárolni milyen
+                        "ingredientek" találhatóak otthon, később ezek alapján tud tervezni a receptekkel</td>
+                </tr>
+                <tr>
+                    <td><strong>ShoppingList</strong></td>
+                    <td>Bevásárló lista entitás, a felhasználók tudnak létrehozni különböző bevásárló listákat
+                        amelyekhez a recepthez hiányzó, vagy alap, szükséges hozzávalókat tudnak hozzáadni</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2></h2>
+
+        <img src="/images/analizis_modell.png" alt="Analízis Modell Diagram">
+    </main>
+
+    <script src="/scripts/script.js"></script>
+</body>
+
+</html>
