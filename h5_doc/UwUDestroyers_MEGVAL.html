@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>h5</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+
+    <nav class="sidebar" id="sidebar-placeholder"></nav>
+
+    <main class="content">
+        <h1>1. Megvalósítási dokumentáció</h1>
+
+        <h2>Fejlesztési folyamat</h2>
+        <p>
+            A fejlesztés a dokumentáció írásával párhuzamosan történt, a Scrum módszertan alapján, egy hetes sprintekkel és meetingekkel. A fejlesztés során az elkészült részek folyamatosan tesztelve lettek unit, ill. integrációs tesztekkel.
+        </p>
+
+        <h2>Architektúra megvalósítása</h2>
+            <p>Az architektúra három részbe lett szervezve</p>
+            <p><strong>Megjelenítési réteg (UI)</strong></p>
+            <p>
+                4 fő oldalból áll:
+                    <p><strong>• Home page: </strong> Az alkalmazás fő képernyője, itt látszik a bejelentkezett felhasználó, és innen érhetőek el a többi képernyők.</p>
+                    <p><strong>• Recept page: </strong> Itt lehet létrehozni új receptet és megnyitni már létező receptet.</p>
+                    <p><strong>• Refrigerator page: </strong> A virtuális hűtő, ahol a meglévő alapanyagokat lehet tárolni.</p>
+                    <p><strong>• Shopping List page: </strong> A bevásárló lista elkészítése a szükséges alapanyagok alapján.</p>
+            </p>
+            <p><strong>Alkalmazási réteg (üzleti logika)</strong></p>
+            <p>Kontrollerek és szolgáltatások (felhasználó, recept, hűtő, bevásárló lista)</p>
+
+            <p><strong>Adatkezelési réteg (adatbázis)</strong></p>
+            <p>
+                2 fő komponense:
+                    <p>• Adatbázis</p>
+                    <p>• ORM</p>
+            </p>
+        
+        <h2>Osztályok, modulok és komponensek</h2>
+            <p><strong>Osztályok</strong></p>
+            <table>
+                <tr>
+                    <th>Osztály</th>
+                    <th>Leírás</th>
+                </tr>
+                <tr>
+                    <td>User</td>
+                    <td>Felhasználókkal kapcsolatos műveletek, felhasználói adatok</td>
+                </tr>
+                <tr>
+                    <td>Recipe</td>
+                    <td>Recept adatai, hozzávalók, elkészítés</td>
+                </tr>
+                <tr>
+                    <td>Ingredient</td>
+                    <td>Hozzávalók adatai, hozzávalók kategóriái</td>
+                </tr>
+                <tr>
+                    <td>Refrigerator</td>
+                    <td>Hűtő adatai, a hűtőben lévő alapanyagok nyilvántartása, új alapanyag felvitele</td>
+                </tr>
+                <tr>
+                    <td>ShoppingList</td>
+                    <td>Bevásárlólista kezelése, új alapanyag felvitele</td>
+                </tr>
+            </table>
+            <p><strong>Modulok</strong></p>
+            <table>
+                <tr>
+                    <th>Modul</th>
+                    <th>Leírás</th>
+                </tr>
+                <tr>
+                    <td>Components</td>
+                    <td>UI komponensek</td>
+                </tr>
+                <tr>
+                    <td>Pages</td>
+                    <td>Az oldalak</td>
+                </tr>
+                <tr>
+                    <td>Services</td>
+                    <td>API hívások kezelése</td>
+                </tr>
+                <tr>
+                    <td>Context</td>
+                    <td>Globális állapot kezelés</td>
+                </tr>
+                <tr>
+                    <td>Utils</td>
+                    <td>Segédfüggvények</td>
+                </tr>
+                <tr>
+                    <td>Controllers</td>
+                    <td>REST API végpontok</td>
+                </tr>
+                <tr>
+                    <td>Services</td>
+                    <td>Üzleti logikák</td>
+                </tr>
+                <tr>
+                    <td>Models</td>
+                    <td>DTO-k, Domain entitások</td>
+                </tr>
+                <tr>
+                    <td>Data</td>
+                    <td>Adatbázis kontextus</td>
+                </tr>
+                <tr>
+                    <td>Repositories</td>
+                    <td>Adatbázis műveletek</td>
+                </tr>
+                <tr>
+                    <td>Helpers</td>
+                    <td>Segédfüggvények</td>
+                </tr>
+            </table>
+
+            <h2>Tervezési minták</h2>
+            <p><strong>• MVC: </strong>A frontend és a backend el van különítve</p>
+            <p><strong>• Repository: </strong>Adatbázis műveletek egységesen vannak kezelve</p>
+            <p><strong>• Service layer: </strong>Üzleti logikák centralizálva vannak</p>
+            <p><strong>• DTO: </strong>Entity és reprezentációs modell elkülönítése</p>
+
+            <h2>Használt technológiák</h2>
+            <p><strong>Frontend technológiák:</strong></p>
+            <p>• React 18+ - Komponens alapú UI fejlesztés</p>
+            <p>• TypeScript - Típusbiztos JavaScript</p>
+            <p>• Axios - HTTP kliens</p>
+            <p>• React Router - Oldal navigáció</p>
+            <p>• Material-UI - Design rendszer</p>
+
+            <p><strong>Backend technológiák:</strong></p>
+            <p>• C# - Programozási nyelv</p>
+            <p>• ASP.NET Core - Alkalmazás keretrendszer</p>
+            <p>• Entity Framework Core - ORM megoldás</p>
+            <p>• JWT Bearer - Autentikáció</p>
+            <p>• Swashbuckle - API dokumentáció</p>
+
+            <p><strong>Adatbázis:</strong></p>
+            <p>• MySQL 8.0 - Relációs adatbázis</p>
+            <p>• Pomelo Entity Framework - MySQL provider</p>
+
+    </main>
+
+    <script src="/scripts/script.js"></script>
+</body>
+
+</html>

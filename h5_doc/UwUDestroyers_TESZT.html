@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>h5</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+
+    <nav class="sidebar" id="sidebar-placeholder"></nav>
+
+    <main class="content">
+        <h1>2. Tesztelési terv</h1>
+
+        <h2>Tesztelési stratégia</h2>
+            <p>Automatikus (robot) tesztek a frontend-en, Unit tesztek a backend-en, integrációs tesztek a frontend és backend között.</p>
+
+        <h2>Tesztesetek</h2>
+        <table>
+                <tr>
+                    <th>Teszt leírása</th>
+                    <th>Bemenet</th>
+                    <th>Elvárt eredmény</th>
+                </tr>
+                <tr>
+                    <td>Regisztráció rossz adatokkal</td>
+                    <td>Már foglalt felhasználónév</td>
+                    <td>"Ez a felhasználónév már foglalt" üzenet</td>
+                </tr>
+                <tr>
+                    <td>Regisztráció rossz adatokkal</td>
+                    <td>Túl gyenge jelszó</td>
+                    <td>"A megadott jelszó túl gyenge" üzenet</td>
+                </tr>
+                <tr>
+                    <td>Regisztráció megfelelő addatokkal</td>
+                    <td>Megfelelő adatok (felhasználónév, jelszó, email)</td>
+                    <td>A megadott email címre egy megerősítő üzenet küldése, "Sikeres regisztráció, a megadott email cím megerősítése szükséges" üzenet</td>
+                </tr>
+                <tr>
+                    <td>Bejelentkezés megpróbálása email megerősítés nélkül</td>
+                    <td>Megerősítetlen email cím</td>
+                    <td>"Email cím megerősítés szükséges, a bejelentkezés előtt" üzenet</td>
+                </tr>
+                <tr>
+                    <td>Bejelentkezés helytelen adatokkal</td>
+                    <td>Helytelen jelszó, vagy felhasználónév</td>
+                    <td>"A megadott jelszó, vagy felhasználónév helytelen"</td>
+                </tr>
+                <tr>
+                    <td>Bejelentkezés helyes adatokkal</td>
+                    <td>Helyes jelszó és felhasználónév</td>
+                    <td>"Sikeres bejelentkezés" üzenet, a rendszer bejelentkezik és megjelentkezik a Home page-en a felhasználó</td>
+                </tr>
+                <tr>
+                    <td>Hiányos recept létrehozása (nincs név)</td>
+                    <td>Név nélküli recept</td>
+                    <td>"A receptnek kell lennie nevének" üzenet</td>
+                </tr>
+                <tr>
+                    <td>Hiányos recept létrehozása (nincs hozzávaló)</td>
+                    <td>Hozzávaló nélküli recept</td>
+                    <td>"A receptnek kell lennie hozzávalójának" üzenet</td>
+                </tr>
+                <tr>
+                    <td>Új recept hozzáadása az oldalhoz</td>
+                    <td>A felhasználó receptje</td>
+                    <td>A recept megjelenik az oldalon</td>
+                </tr>
+                <tr>
+                    <td>Profilkép beállítása</td>
+                    <td>Egy kép</td>
+                    <td>A profilkép megjelenik az oldalon</td>
+                </tr>
+                <tr>
+                    <td>Profil leírás beállítása</td>
+                    <td>Leírás</td>
+                    <td>A leírás megjelenik a profilon</td>
+                </tr>
+                <tr>
+                    <td>Recept keresés (létezik)</td>
+                    <td>A keresendő recept</td>
+                    <td>Megjelenik a keresett recept</td>
+                </tr>
+                <tr>
+                    <td>Recept keresés (nem létezik)</td>
+                    <td>A keresendő recept, ami nem létezik</td>
+                    <td>"A keresett recept nem található" üzenet</td>
+                </tr>
+                <tr>
+                    <td>Új alapanyag felvitele a virtuális hűtőbe</td>
+                    <td>Az új alapanyag</td>
+                    <td>Az alapanyag megjelenik a hűtőben</td>
+                </tr>
+                <tr>
+                    <td>Új alapanyag felvitele a bevásárlólistára</td>
+                    <td>Az új alapanyag</td>
+                    <td>Az alapanyag megjelenik a bevásárlólistában</td>
+                </tr>
+        </table>
+
+        <h2>Eredmények</h2> 
+        <p>Minden teszt sikeresen lefutott</p>
+        
+        <h2>Használt eszközök</h2>
+        <table>
+                <tr>
+                    <th>Felhasznált eszköz</th>
+                    <th>Felhasználás leírása</th>
+                </tr>
+                <tr>
+                    <td>Selenium</td>
+                    <td>A frontend automatikus tesztelése: funkcionális tesztek</td>
+                </tr>
+                <tr>
+                    <td>Xunit + Moq</td>
+                    <td>Backend unit tesztek. Xunit: A tényleges Unit tesztekhez. Moq: Az tesztelés során az osztályok szimulálásához (mocking)</td>
+                </tr>
+                <tr>
+                    <td>Postman</td>
+                    <td>API tesztelése, funkcionális tesztek</td>
+                </tr>
+            </table>
+    </main>
+
+    <script src="/scripts/script.js"></script>
+</body>
+
+</html>
